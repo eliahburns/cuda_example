@@ -13,6 +13,8 @@ $ ./raytrace <num_rays> <dimension>
 Note: 
 ---
 
+_tested on Midway supercomputer_
+
 Generated data is saved to "sphere.bin"
 
 The python file, plot.py will generate two images from the data, but you 
