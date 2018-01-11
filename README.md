@@ -18,7 +18,7 @@ code to a GPU--in the case of my tests a Tesla K80 GPU was used.
 
 All generated data is saved to _sphere.bin_.
 
-<img align="right" width="250" height="175"
+<img align="center" width="350" height="275"
      title="cup" src="./images/plot_2.png">
 
 You'll see in the images directory, a plot illustrating a scaling study for the
@@ -30,7 +30,7 @@ for this may be largely responsible for the shape of the curve where it dips dow
 begins to increase slightly before tapering off again.
 
 
-<img align="right" width="250" height="175"
+<img align="center" width="350" height="275"
      title="cup" src="./images/plot_1.png">
 
 There's also a plot that shows the execution times for serial and cuda versions side
