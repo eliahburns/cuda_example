@@ -23,7 +23,7 @@ All generated data is saved to _sphere.bin_.
 <img align="left" width="450" height="375"
      title="cup" src="./images/plot_2.png">
 
-<br><br><br>
+<br><br>
 
 You'll see in the images directory, a plot illustrating a scaling study for the
 occupancy of the Tesla K80 GPU, running from 8 threads to 2048 threads and showing
@@ -45,7 +45,7 @@ steady and linear. The cuda version eventually hits a point where it begins expo
 computation time but it's at a much larger problem size.
 
 
-<br><br><br>
+<br><br><br><br>
 
 ## Compilation
 
