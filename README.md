@@ -25,13 +25,14 @@ All generated data is saved to _sphere.bin_.
 
 <br><br>
 
-You'll see in the images directory, a plot illustrating a scaling study for the
-occupancy of the Tesla K80 GPU, running from 8 threads to 2048 threads and showing
-a pretty continuous improvement. I had to do some juggling in places, so that as problem
-sizes change I did not go past the max thread or block size--when this happened, it seemed
-that the GPU wouldn't actually do any computations). Some of the adjusting I do to compensate
-for this may be largely responsible for the shape of the curve where it dips down and then
-begins to increase slightly before tapering off again.
+In the image directory, (and to the right) there's a plot illustrating a scaling
+study performed for the occupancy of a Telsa K80 GPU. For a fixed problem size,
+the code was
+run using powers of 2 from 2 to 1024 threads per block. Precautions had to be
+taken at certain points to insure that the max thread or max block size was
+not exceeded--some of this adjusting may be responsible for the curve's early
+dip in execution time and then slight increase before it begins to taper off
+again.
 
 
 <img align="left" width="450" height="375"
@@ -39,10 +40,15 @@ begins to increase slightly before tapering off again.
 
 <br><br><br>
 
-There's also a plot that shows the execution times for serial and cuda versions side
-by side. We see the serial version increase in time rapidly, while the cuda version stays largely
-steady and linear. The cuda version eventually hits a point where it begins exponentially increasing in
-computation time but it's at a much larger problem size.
+There's also a plot (again to the right)
+that shows the execution times for serial and CUDA versions side
+by side. We see the serial version increase in time rapidly, while the CUDA version
+stays largely steady and its linear slope is quite negligible in comparison to the
+serial version. Because this program's primary computation task is to simply randomly
+generate vectors (rays of light), a problem considered
+[embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel)
+it makes sense that we would see immense reductions in execution time in comparision
+to our serial version.
 
 
 <br><br><br><br><br><br>
