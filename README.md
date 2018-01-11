@@ -19,10 +19,11 @@ code to a GPU--in the case of my tests a Tesla K80 GPU was used.
 All generated data is saved to _sphere.bin_.
 
 
-<br><br><br><br>
 
 <img align="left" width="450" height="375"
      title="cup" src="./images/plot_2.png">
+
+<br><br><br><br>
 
 You'll see in the images directory, a plot illustrating a scaling study for the
 occupancy of the Tesla K80 GPU, running from 8 threads to 2048 threads and showing
@@ -32,11 +33,11 @@ that the GPU wouldn't actually do any computations). Some of the adjusting I do 
 for this may be largely responsible for the shape of the curve where it dips down and then
 begins to increase slightly before tapering off again.
 
-<br><br><br><br>
-
 
 <img align="left" width="450" height="375"
      title="cup" src="./images/plot_1.png">
+
+<br><br><br><br>
 
 There's also a plot that shows the execution times for serial and cuda versions side
 by side. We see the serial version increase in time rapidly, while the cuda version stays largely
