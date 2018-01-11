@@ -29,7 +29,7 @@ that the GPU wouldn't actually do any computations). Some of the adjusting I do 
 for this may be largely responsible for the shape of the curve where it dips down and then
 begins to increase slightly before tapering off again.
 
-<br><br>
+<br><br><br><br>
 
 
 <img align="left" width="450" height="375"
