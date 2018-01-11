@@ -55,13 +55,13 @@ to our serial version.
 
 ## Generated Image
 
-We can take the binary data file and use python and matplotlib to display the final product, which is a single sphere and a single light source observed
-through our first person perspective.
-
-
 <img align="right" width="145" height="100"
      title="cup" src="./images/sphere1000_color.png">
 
+We can take the binary data file and use python and matplotlib to display the final product, which is a single sphere and a single light source observed
+through our first person perspective.
+
+<br><br>
 
 ## Compilation
 
