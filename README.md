@@ -29,7 +29,7 @@ All generated data is saved to _sphere.bin_.
 
 <br><br>
 
-In the image directory, (and to the right) there's a plot illustrating a scaling
+In the image directory, (and to the left) there's a plot illustrating a scaling
 study performed for the occupancy of a Telsa K80 GPU. For a fixed problem size,
 the code was
 run using powers of 2, from 2 to 1024 threads per block. Precautions had to be
@@ -44,7 +44,7 @@ again.
 
 <br><br><br>
 
-There's also a plot (again to the right)
+There's also a plot (again to the left)
 that shows the execution times for serial and CUDA versions side
 by side. We see the serial version increase in time rapidly, while the CUDA version
 stays largely steady and its linear slope is quite negligible in comparison to the
