@@ -28,7 +28,7 @@ All generated data is saved to _sphere.bin_.
 In the image directory, (and to the right) there's a plot illustrating a scaling
 study performed for the occupancy of a Telsa K80 GPU. For a fixed problem size,
 the code was
-run using powers of 2 from 2 to 1024 threads per block. Precautions had to be
+run using powers of 2, from 2 to 1024 threads per block. Precautions had to be
 taken at certain points to insure that the max thread or max block size was
 not exceeded--some of this adjusting may be responsible for the curve's early
 dip in execution time and then slight increase before it begins to taper off
@@ -44,14 +44,24 @@ There's also a plot (again to the right)
 that shows the execution times for serial and CUDA versions side
 by side. We see the serial version increase in time rapidly, while the CUDA version
 stays largely steady and its linear slope is quite negligible in comparison to the
-serial version. Because this program's primary computation task is to simply randomly
-generate vectors (rays of light), a problem considered
-[embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel)
-it makes sense that we would see immense reductions in execution time in comparision
+serial version. Because this program's primary computational task is to simply randomly
+generate vectors (rays of light)--a problem considered
+[embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel)--it
+makes sense that we would see immense reductions in execution time in comparision
 to our serial version.
 
 
 <br><br><br><br><br><br>
+
+## Generated Image
+
+We can take the binary data file and use python and matplotlib to display the final product, which is a single sphere and a single light source observed
+through our first person perspective.
+
+
+<img align="right" width="145" height="100"
+     title="cup" src="./images/sphere1000_color.png">
+
 
 ## Compilation
 
@@ -82,7 +92,10 @@ _note: the number of grid points will be equal to the product of the
 two dimensions of the grid, e.g. for a 4x4 grid we should enter 16 as the
 number of grid points._
 
+## Requirements
 
+To compile run the CUDA version of this software we need to have the _CUDA
+Developer Toolkit_ installed.
 
 
 
