@@ -18,6 +18,9 @@ code to a GPU--in the case of my tests a Tesla K80 GPU was used.
 
 All generated data is saved to _sphere.bin_.
 
+
+<br><br><br><br>
+
 <img align="left" width="450" height="375"
      title="cup" src="./images/plot_2.png">
 
