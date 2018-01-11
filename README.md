@@ -16,6 +16,10 @@ standard version written using only C. And a version which uses some extra
 CUDA code to offload the most computationally intensive sections of the
 code to a GPU--in the case of my tests a Tesla K80 GPU was used.
 
+_note: This is a simply a demonstration of some low level programming using C and CUDA,
+and then analysing differences in performance--if interested in using ray tracing in another
+program, there's better off the shelf options._
+
 All generated data is saved to _sphere.bin_.
 
 
