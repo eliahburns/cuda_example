@@ -45,7 +45,7 @@ steady and linear. The cuda version eventually hits a point where it begins expo
 computation time but it's at a much larger problem size.
 
 
-<br><br><br><br>
+<br><br><br><br><br><br>
 
 ## Compilation
 
