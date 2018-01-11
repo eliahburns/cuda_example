@@ -5,6 +5,8 @@ _Testing was performed on the Midway supercomputer at UChicago._
 For a refresher (or intro) on what ray tracing is, check Wikipedia's
 page on [ray tracing](https://en.wikipedia.org/wiki/Ray_tracing_(graphics))
 
+<img align="right" width="200" height="128"
+     title="cup" src="./images/ray_trace_example.png">
 
 ## Usage
 
@@ -68,8 +70,6 @@ two dimensions of the grid, e.g. for a 4x4 grid we should enter 16 as the
 number of grid points._
 
 
-Note: 
----
 
 
 
