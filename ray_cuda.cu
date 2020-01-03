@@ -127,8 +127,8 @@ void raytrace(double * grid, int grid_p, int n_rays)
 
         do
         {
-   			phi = (double) curand_uniform(&state) * (double) M_PI;
-      		theta = (double) curand_uniform(&state)  * (double) M_PI;
+   	    phi = (double) curand_uniform(&state) * (double) M_PI;
+      	    theta = (double) curand_uniform(&state)  * (double) M_PI;
  
             V.x  = sin(theta) * cos(phi);
             V.y  = sin(theta) * sin(phi);
