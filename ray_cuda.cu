@@ -102,11 +102,11 @@ double brightness(Vector3D *I, Vector3D *L, Vector3D *N)
 __global__
 void raytrace(double * grid, int grid_p, int n_rays)
 {
-	// use cuda's random number generator
-	int i =  blockDim.x*blockIdx.x + threadIdx.x;
+    // use cuda's random number generator
+    int i =  blockDim.x*blockIdx.x + threadIdx.x;
 
-	curandState_t state;
-  	curand_init(i, 0, 0, &state);
+    curandState_t state;
+    curand_init(i, 0, 0, &state);
 
     int radius = 6;
     double W_y = 10; double W_max = 10;
@@ -176,41 +176,41 @@ int main(int argc, char **argv)
         exit(1);
     }
 
-	struct timeval start, end;
-	gettimeofday(&start, NULL);
+    struct timeval start, end;
+    gettimeofday(&start, NULL);
 
     srand(time(NULL));
 
     // allocate window (grid_p x grid_p) 
     double * grid = (double *) calloc(grid_p*grid_p, sizeof(double));  
 
-	// copy data over launch kernel 
+    // copy data over launch kernel 
 
-	// Cuda malloc
-	double * cuda_grid;
-	cudaError_t _e;
-	_e = cudaMalloc((void**)&cuda_grid, grid_p*grid_p * sizeof(double));
-	if (_e != cudaSuccess)
-		printf("Cuda error: %s\n", cudaGetErrorString(_e));
+    // Cuda malloc
+    double * cuda_grid;
+    cudaError_t _e;
+    _e = cudaMalloc((void**)&cuda_grid, grid_p*grid_p * sizeof(double));
+    if (_e != cudaSuccess)
+	printf("Cuda error: %s\n", cudaGetErrorString(_e));
 
-	//transfer data to gpu
-	_e = cudaMemcpy(cuda_grid, grid, grid_p*grid_p*sizeof(double), cudaMemcpyHostToDevice);
-	if (_e != cudaSuccess)
-		printf("Cuda error: %s\n", cudaGetErrorString(_e));
+    //transfer data to gpu
+    _e = cudaMemcpy(cuda_grid, grid, grid_p*grid_p*sizeof(double), cudaMemcpyHostToDevice);
+    if (_e != cudaSuccess)
+	printf("Cuda error: %s\n", cudaGetErrorString(_e));
 
-	// run kernel
-	int block_size = ;
-	int rays_per_thread = 50;
-	int n_blocks = (n_rays + block_size - 1) / (block_size*rays_per_thread);
-	printf("number of blocks = %d\n", n_blocks);
+    // run kernel
+    int block_size = ;
+    int rays_per_thread = 50;
+    int n_blocks = (n_rays + block_size - 1) / (block_size*rays_per_thread);
+    printf("number of blocks = %d\n", n_blocks);
 
-	raytrace<<< n_blocks, block_size>>>(cuda_grid, grid_p, rays_per_thread);
-	_e = cudaGetLastError();
+    raytrace<<< n_blocks, block_size>>>(cuda_grid, grid_p, rays_per_thread);
+    _e = cudaGetLastError();
 
-	//get data from gpu
-	_e = cudaMemcpy(grid, cuda_grid, grid_p*grid_p*sizeof(double), cudaMemcpyDeviceToHost);
-	if (_e != cudaSuccess)
-		printf("Cuda error: %s\n", cudaGetErrorString(_e));
+    //get data from gpu
+    _e = cudaMemcpy(grid, cuda_grid, grid_p*grid_p*sizeof(double), cudaMemcpyDeviceToHost);
+    if (_e != cudaSuccess)
+	printf("Cuda error: %s\n", cudaGetErrorString(_e));
 
     // print execution time
     gettimeofday(&end, NULL);
